@@ -30,7 +30,7 @@ Test were written using Gherkin language. This test sends a get request to the A
 
 Preconditions:
 - Apache Maven installed and configured according to [installation guide](https://maven.apache.org/install.html)
-- Clone project from github using `git clone [url]
+- Clone project from github using `git clone https://github.com/Nilmi/api-test.git
 
 Open terminal and navigate to project root folder and run command `mvn test`
 
