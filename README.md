@@ -1,6 +1,7 @@
 **Automated API Test**
 
 **1. Technical details**
+
 This automated API test implemented in Java using following  frameworks and libraries:
 
 |Framework/ Library  |Usage  |
@@ -16,6 +17,7 @@ This automated API test implemented in Java using following  frameworks and libr
 - This project can be expanded to a test suite which contain large number of test cases belong to different test suites (for example: regression test, smoke test, etc) covering different features. 
 
 **3. About the test** 
+
 Test were written using Gherkin language. This test sends a get request to the API endpoint with "category ID" and "catalogue". Then executes following verification steps against the response:
 
 	- Verify the response status code is 200  
@@ -25,6 +27,7 @@ Test were written using Gherkin language. This test sends a get request to the A
 	- Verify the "Description" of "Gallery" promotions element contains the text "2x larger image"
 
 **4. How to run the test?**
+
 Preconditions:
 - Apache Maven installed and configured according to [installation guide](https://maven.apache.org/install.html)
 - Clone project from github using `git clone [url]
@@ -32,8 +35,10 @@ Preconditions:
 Open terminal and navigate to project root folder and run command `mvn test`
 
 **5. Test Report**
+
 After execution of this API test case it generates a report in html format. Reports are generated inside reports folder inside the project folder.
 This report has three different views:
+
 	- Dashboard view
 		- Provides an overview of test results using graphical representation
 		- Summarizes test results according to features, scenarios, test steps
