@@ -24,6 +24,7 @@ This automated API test implemented in Java using following  frameworks and libr
         - Test cases can be tagged according to the test suite they belong / functionality they cover. 
         - Once test cases are tagged like this, the tag can be used to run test cases as test suite.
         - Currently there is one test case in feature directory to cover the given acceptance criteria.
+        - ![Gherkin test case](https://user-images.githubusercontent.com/25843579/66724379-10543e80-ee58-11e9-9457-97be8814f776.png)
     
     - Step definition:
     
