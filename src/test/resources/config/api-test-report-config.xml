@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<extentreports>
+    <configuration>
+        <theme>standard</theme>
+        <encoding>UTF-8</encoding>
+        <protocol>https</protocol>
+        <documentTitle>API Test Report</documentTitle>
+        <reportName>API Test Report</reportName>
+        <dateFormat>yyyy-MM-dd</dateFormat>
+        <timeFormat>HH:mm:ss</timeFormat>
+        <scripts>
+            <![CDATA[
+        $(document).ready(function() {
+        $('.brand-logo.blue.darken-3').css('display','none');
+        });
+      ]]>
+        </scripts>
+        <styles>
+            <![CDATA[
+
+      ]]>
+        </styles>
+    </configuration>
+</extentreports>
