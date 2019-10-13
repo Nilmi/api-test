@@ -93,8 +93,8 @@ public class ConfigurationManager {
 
         BASE_URL = configuration.getString(CONFIG_BASE_URL);
         BASE_PATH = configuration.getString(CONFIG_PATH_BASE);
-
-        REPORT_CONFIG_PATH = toAbsolutePath(configuration.getString(CONFIG_PATH_REPORT_CONFIG));
+        
+        REPORT_CONFIG_PATH = configuration.getString(CONFIG_PATH_REPORT_CONFIG);
         REPORT_FOLDER_NAME = FileHelper.getTimestampedName(null);
 
         REPORT_FOLDER_PATH = toAbsolutePath(configuration.getString(CONFIG_PATH_OUTPUT)) + REPORT_FOLDER_NAME;
