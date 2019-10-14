@@ -28,7 +28,7 @@ This automated API test is implemented in Java using following frameworks and li
 
 **3. Code structure**
 
-- Automated API test designed to enable code reuse, maintainability and expandability.
+- Automated API test is designed to enable code reuse, maintainability and expandability.
 - Diagram below shows the main classes/ components and the test execution flow.
 ![classes/ components](https://user-images.githubusercontent.com/25843579/66760714-39ff7b00-eed5-11e9-9dc6-df24af13b05f.png)
 - This project can be expanded to a test suite which contain large number of test cases belong to different test suites (for example: regression test, smoke test, etc) covering different features. 
@@ -38,7 +38,7 @@ This automated API test is implemented in Java using following frameworks and li
 - Code organized in to,
     - Gherkin test cases: 
     
-        - Test cases are organized in feature files as scenarios (package: src/test/resources/features/)
+        - Test cases are organized in feature files as scenario outline (package: src/test/resources/features/).
         - Test cases can be tagged according to the test suite they belong / functionality they cover. 
         - Once test cases are tagged like this, the tag can be used to run test cases as test suite.
         - Currently there is one test case in feature directory to cover the given acceptance criteria.
