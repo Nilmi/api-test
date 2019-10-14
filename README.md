@@ -1,6 +1,18 @@
 **Automated API Test**
 
-**1. Technical details**
+**1. How to run the test?**
+
+Preconditions:
+- Apache Maven installed and configured according to [installation guide](https://maven.apache.org/install.html)
+- Clone project from github using `'git@github.com:Nilmi/api-test.git'`
+
+Steps:
+- config.properties `path.base` - Set base path config property in config.properties file (src/test/resources/config) to your api-test folder location to copy the generated test report as shown in below
+- Open terminal and navigate to project root folder 
+- Run command `mvn test`
+![classes/ components](https://user-images.githubusercontent.com/25843579/66764248-f0fef500-eedb-11e9-944c-0c458d3fc85e.png)
+
+**2. Technical details**
 
 This automated API test is implemented in Java using following frameworks and libraries:
 
@@ -14,7 +26,7 @@ This automated API test is implemented in Java using following frameworks and li
 |Extent reports   |Generate automated test report  |
 |Maven  |Manage dependencies and initialize test    | 
 
-**2. Code structure**
+**3. Code structure**
 
 - Automated API test designed to enable code reuse, maintainability and expandability.
 - Diagram below shows the main classes/ components and the test execution flow.
@@ -22,7 +34,7 @@ This automated API test is implemented in Java using following frameworks and li
 - This project can be expanded to a test suite which contain large number of test cases belong to different test suites (for example: regression test, smoke test, etc) covering different features. 
 
 - Test case '_Send GET request to API with parameters "category ID" and "catelogue"_' designed using 'Scenario Outline:' to verify any category object by only adding test data (category ID, catelogue, category name, CanRelist, promotions element name, promotions description text) to 'Examples:' section, but without doing any changes to the code.
-- Endpoint URL is parameterized to take parametrized values (v1/Categories/{category-id}/Details.json?catalogue={catalogue})
+- Endpoint URL is parameterized to take parametrized values (v1/Categories/**{category-id}**/Details.json?catalogue=**{catalogue}**)
 - Code organized in to,
     - Gherkin test cases: 
     
@@ -49,7 +61,7 @@ This automated API test is implemented in Java using following frameworks and li
         - testng.xml mentioned in pom.xml file, this enables execution of tests once `mvn test` command executed.      
            
 
-**3. About the test** 
+**4. About the test** 
 
 Tests are written using Gherkin language. This test sends a GET request to the API endpoint with "category ID" and "catalogue" parameter values. Then executes following verification steps against the response:
 
@@ -58,16 +70,6 @@ Tests are written using Gherkin language. This test sends a GET request to the A
 	- Verify "CanRelist" parameter value is "true"  
 	- Verify there is a "Promotions" element with Name "Gallery"  
 	- Verify the "Description" of "Gallery" promotions element contains the text "2x larger image"
-
-**4. How to run the test?**
-
-Preconditions:
-- Apache Maven installed and configured according to [installation guide](https://maven.apache.org/install.html)
-- Clone project from github using `'git@github.com:Nilmi/api-test.git'`
-
-Steps:
-- Open terminal and navigate to project root folder 
-- Run command `mvn test`
 
 **5. Test Report**
 
