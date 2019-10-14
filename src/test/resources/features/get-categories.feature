@@ -1,15 +1,17 @@
 Feature: GET Catogories
 
   @Regression
-  Scenario: GET Category 6327 with catelogue parameter set to false
+  Scenario Outline: Send GET request to API with parameters "category ID" and "catelogue"
 
-    When A get request sent to the API with following parameters:
-      | category  | 6327  |
-      | catalogue | false |
+    When A get request sent to the API with parameters "<category>" and "<catalogue>"
     Then Response status code is 200
-    And Name is "Carbon credits"
-    And CanRelist is "true"
-    And There is a Promotions element with Name "Gallery"
-    And Description of "Gallery" promotions element contains the text "2x larger image"
+    And Name is "<category name>"
+    And CanRelist is "<CanRelist value>"
+    And There is a Promotions element with Name "<promotions name>"
+    And Description of "<promotions name>" promotions element contains the "<text>"
+
+    Examples:
+      | category | catalogue | category name  | CanRelist value | promotions name | text            |
+      | 6327     | false     | Carbon credits | true            | Gallery         | 2x larger image |
 
 

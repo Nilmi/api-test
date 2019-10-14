@@ -6,8 +6,6 @@ import io.restassured.RestAssured;
 import io.restassured.response.Response;
 import nz.assurity.qa.apitest.util.ConfigurationManager;
 
-import java.util.Map;
-
 import static org.hamcrest.Matchers.*;
 
 
@@ -21,9 +19,10 @@ public class GetCategorySteps {
     private Response response;
     private String url = "https://api.myjson.com/bins/1bo2em";
 
-    @When("^A get request sent to the API with following parameters:$")
-    public void a_get_request_sent_to_the_API_with_following_parameters(Map<String, String> parameters) {
-        response = RestAssured.when().get(ConfigurationManager.BASE_URL, parameters.get("category"), parameters.get("catalogue"));
+
+    @When("^A get request sent to the API with parameters \"([^\"]*)\" and \"([^\"]*)\"$")
+    public void a_get_request_sent_to_the_API_with_parameters_and(String category, String catalogue) {
+        response = RestAssured.when().get(ConfigurationManager.BASE_URL, category, catalogue);
     }
 
     @Then("^Response status code is (\\d+)$")
@@ -46,12 +45,10 @@ public class GetCategorySteps {
         response.then().body("Promotions.Name", hasItem(elementName));
     }
 
-    @Then("^Description of \"([^\"]*)\" promotions element contains the text \"([^\"]*)\"$")
-    public void description_of_promotions_element_contains_the_text(String elementName, String text) {
+    @Then("^Description of \"([^\"]*)\" promotions element contains the \"([^\"]*)\"$")
+    public void description_of_promotions_element_contains_the(String elementName, String text) {
         String gPath = String.format("Promotions.find { it.Name == '%s'}.Description", elementName);
-
         response.then().body(gPath, containsStringIgnoringCase(text));
-        //node.depthFirst().findAll { it.name() == 'div' && it.@id == 'foo'}
     }
 
 }
