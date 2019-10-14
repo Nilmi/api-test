@@ -18,9 +18,11 @@ This automated API test is implemented in Java using following frameworks and li
 
 - Automated API test designed to enable code reuse, maintainability and expandability.
 - Diagram below shows the main classes/ components and the test execution flow.
+![classes/ components](https://user-images.githubusercontent.com/25843579/66760714-39ff7b00-eed5-11e9-9dc6-df24af13b05f.png)
 - This project can be expanded to a test suite which contain large number of test cases belong to different test suites (for example: regression test, smoke test, etc) covering different features. 
-- Test case 'Send GET request to API with parameters "category ID" and "catelogue"' designed using 'Scenario Outline:' to verify any category object by only adding test data (category ID, catelogue, category name, CanRelist, promotions element name, promotions description text) to 'Examples:' section, but without doing any changes to the code.
-- Endpoint URL is parameterized to take parametrized values (https://api.tmsandbox.co.nz/v1/Categories/{category-id}/Details.json?catalogue={catalogue})
+
+- Test case '_Send GET request to API with parameters "category ID" and "catelogue"_' designed using 'Scenario Outline:' to verify any category object by only adding test data (category ID, catelogue, category name, CanRelist, promotions element name, promotions description text) to 'Examples:' section, but without doing any changes to the code.
+- Endpoint URL is parameterized to take parametrized values (v1/Categories/{category-id}/Details.json?catalogue={catalogue})
 - Code organized in to,
     - Gherkin test cases: 
     
@@ -28,7 +30,7 @@ This automated API test is implemented in Java using following frameworks and li
         - Test cases can be tagged according to the test suite they belong / functionality they cover. 
         - Once test cases are tagged like this, the tag can be used to run test cases as test suite.
         - Currently there is one test case in feature directory to cover the given acceptance criteria.
-![Gherkin test case](https://user-images.githubusercontent.com/25843579/66724379-10543e80-ee58-11e9-9457-97be8814f776.png)
+![Gherkin test case](https://user-images.githubusercontent.com/25843579/66760392-98782980-eed4-11e9-84f4-a44e3c573fff.png)
     
     - Step definition:
     
