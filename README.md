@@ -34,7 +34,7 @@ This automated API test is implemented in Java using following frameworks and li
 - This project can be expanded to a test suite which contain large number of test cases belong to different test suites (for example: regression test, smoke test, etc) covering different features. 
 
 - Test case '_Send GET request to API with parameters "category ID" and "catelogue"_' designed using 'Scenario Outline:' to verify any category object by only adding test data (category ID, catelogue, category name, CanRelist, promotions element name, promotions description text) to 'Examples:' section, but without doing any changes to the code.
-- Endpoint URL is parameterized to take parametrized values (v1/Categories/**{category-id}**/Details.json?catalogue=**{catalogue}**)
+- Endpoint URL is parameterized to take values for category ID and catalogue(v1/Categories/**{category-id}**/Details.json?catalogue=**{catalogue}**)
 - Code organized in to,
     - Gherkin test cases: 
     
